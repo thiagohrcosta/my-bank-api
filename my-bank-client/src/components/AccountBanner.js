@@ -1,6 +1,6 @@
 import './AccountBanner.css';
 
-const AccountBanner = () => {
+const AccountBanner = (props) => {
   return(
     <div className="bank-container">
       <div className="container">

@@ -15,12 +15,29 @@ function App() {
     setAccounts(response.data);
   }
 
+  async function amountBalance(){
+    const amountOfBalance = await api.get("accounts");
+    const mapAccount = amountOfBalance.data
+    
+    let sumArray = []
+
+    let accountsBalance = mapAccount.map((amount) => {
+      sumArray.push(parseFloat(amount.balance))
+    })
+    
+    let sumTotalBalance = sumArray.reduce(function(a, b){ return a + b}, 0);
+    setTotalBalance(sumTotalBalance);
+    
+  }
+
   useEffect(() => {
     fetchData();
+    amountBalance();
   }, []);
 
 
   const [accounts, setAccounts] = useState([]);
+  const [totalBalance, setTotalBalance] = useState(0);
 
   return (
     
@@ -28,10 +45,10 @@ function App() {
       <AccountNavbar />
       <AccountBanner />
       <AccountFooter />
-      {/* <header className="App-header pt-5">
+      <header className="App-header pt-5">
         <AccountForm fetchData={fetchData} />
         <Accounts accounts={accounts} />
-      </header> */}
+      </header>
     </div>
   );
 }
