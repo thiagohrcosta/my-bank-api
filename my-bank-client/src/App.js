@@ -4,6 +4,8 @@ import api from "./services/api";
 import "./App.css";
 import Accounts from "./components/accounts";
 import AccountForm from "./components/AccountForm";
+import AccountNavbar from "./components/AccountNavbar";
+import AccountBanner from "./components/AccountBanner";
 
 function App() {
   
@@ -19,11 +21,12 @@ function App() {
 
   const [accounts, setAccounts] = useState([]);
 
-
   return (
     
     <div className="App">
-      <header className="App-header">
+      <AccountNavbar />
+      <AccountBanner />
+      <header className="App-header pt-5">
         <AccountForm fetchData={fetchData} />
         <Accounts accounts={accounts} />
       </header>

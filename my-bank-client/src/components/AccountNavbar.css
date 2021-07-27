@@ -1,0 +1,26 @@
+li{
+  padding: 0px 10px;
+}
+
+.my-custom-brand{
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #54436B !important;
+}
+
+.nav-open-account{
+  background-color: #50CB93;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.nav-login-account{
+  border: 2px solid #50CB93;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.division-bar{
+  font-size: 25px;
+  opacity: 0.5;
+}
