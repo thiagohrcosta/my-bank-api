@@ -1,0 +1,11 @@
+.accounts-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 10px;
+}
+
+.accounts-card{
+  padding: 10px;
+  
+}

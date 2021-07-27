@@ -1,5 +1,5 @@
 class Api::V1::AccountsController < Api::V1::BaseController
-  acts_as_token_authentication_handler_for User, except: [ :index, :show ]
+  acts_as_token_authentication_handler_for User, except: [ :index, :create, :show ]
   before_action :set_account,  only: [:show, :update]
 
   def index
@@ -11,7 +11,7 @@ class Api::V1::AccountsController < Api::V1::BaseController
 
   def create
     @account = Account.new(account_params)
-    @account.user = current_user
+    @account.user = User.last
     authorize @account
     if @account.save
       render :show, status: :created
