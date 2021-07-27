@@ -6,6 +6,7 @@ import Accounts from "./components/accounts";
 import AccountForm from "./components/AccountForm";
 import AccountNavbar from "./components/AccountNavbar";
 import AccountBanner from "./components/AccountBanner";
+import AccountFooter from "./components/AccountFooter";
 
 function App() {
   
@@ -26,10 +27,11 @@ function App() {
     <div className="App">
       <AccountNavbar />
       <AccountBanner />
-      <header className="App-header pt-5">
+      <AccountFooter />
+      {/* <header className="App-header pt-5">
         <AccountForm fetchData={fetchData} />
         <Accounts accounts={accounts} />
-      </header>
+      </header> */}
     </div>
   );
 }
